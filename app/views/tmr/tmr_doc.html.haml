@@ -1,0 +1,62 @@
+- # View for Team Meeting Record(TMR)
+- # Authors: Anton Minkov && Laney Deveson
+- # Date: 12/04/2021
+
+- content_for :title, "Team Operating Agreement"
+
+.container.body_whole_custom
+  - # Check if TMR is submitted or finished
+  - if @unfinished_tmr != nil && (@unfinished_tmr.status == "submitted" || @unfinished_tmr.status == "finished")
+    .container.container_middle.special_margin_top
+      %h1.bigger Team Meeting Record, submitted at: #{@unfinished_tmr.created_at}
+      //Height 6900 for full template to show
+      %iframe{src: "#{rails_blob_path(@unfinished_tmr.tmr_doc, disposition: :inline)}", width: "900", height: "1200"}
+  - else
+    .container.margin_top
+      %h1.bigger There is no Team Meeting Record Submission
+      %hr.group_line
+  - if @unfinished_tmr.nil?
+    - # Upload a TMR as a .pdf file
+    .container
+      %i Upload a .pdf file with the Team Meeting Record
+    = form_tag(tmr_path(team_id: params['team_id'], module_id: params['module_id']), :multipart => true) do
+      %input#custId{name: "team_id", type: "hidden", value: params[:team_id]}/
+      .container
+        .input-group
+          .custom-file
+            %input#file#customFileInput.custom-file-input{"aria-describedby" => "customFileInput", name: "file", type: "file"}
+            %label.custom-file-label{for: "customFileInput"} Select file
+        .input-group-append.margin_left_none.special_margin_top.margin_bottom_small
+          %input.btn.btn-primary.agreement_buttons.justify-content-center.float_left_override{"data-disable-with" => "Upload", name: "commit", type: "submit", value: "Submit"}/
+        %hr.group_line
+      :javascript
+        document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+          var name = document.getElementById("customFileInput").files[0].name;
+          var nextSibling = e.target.nextElementSibling
+          nextSibling.innerText = name
+        })
+    
+  - else
+    - # Display TMR status
+    .container-fluid.white_bg.push_top.container_middle
+      %form#acceptreject{action: tmr_path(team_id: params['team_id'], module_id: params['module_id']), method: "get"}
+        %input#team_id{name: "team_id", type: "hidden", value: params[:team_id]}
+        %input#module_id{name: "module_id", type: "hidden", value: params[:module_id]}
+        - if @unfinished_tmr_sign_status == false
+          %button.btn.btn-primary.agreement_buttons_2.justify-content-center.button_toa_1{form: "acceptreject", type: "submit", value: "Accept", name: "accept_button"} Accept
+          %button.btn.btn-primary.agreement_buttons_2.justify-content-center.button_toa_2{form: "acceptreject", type: "submit", value: "Reject", name: "reject_button"} Reject
+        - elsif @unfinished_tmr_sign_status == true && @unfinished_tmr.status == "submitted"
+          %button.btn.btn-primary.half_button.justify-content-center.button_toa_1{form: "acceptreject", type: "button", value: "Signed", name: "signed_button"} Signed
+        - elsif @unfinished_tmr.status == "finished"
+          %button.btn.btn-primary.half_button.justify-content-center.button_toa_1{form: "acceptreject", type: "button", value: "Agreement accepted", name: "agreement_accepted_button"} Team Meeting Record accepted
+
+  - # Report a problem to the staff
+  .container
+    %h.medium Report a problem with the team
+    %form#report{action: tmr_path(team_id: params['team_id'], module_id: params['module_id']), method: "get"}
+      %input#team_id{name: "team_id", type: "hidden", value: params[:team_id]}
+      %input#module_id{name: "module_id", type: "hidden", value: params[:module_id]}
+      .form-group
+        %textarea.form-control{rows: "5", name: "report_note"}
+      .input-group-append.margin_left_none.special_margin_top.margin_bottom_small
+        %input.btn.btn-primary.agreement_buttons.justify-content-center.float_left_override{name: "report_button", type: "submit", value: "Report"}   

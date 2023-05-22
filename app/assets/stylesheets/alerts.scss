@@ -1,0 +1,56 @@
+// CSS for alerts
+// Authors: Anton Minkov && Laney Deveson
+// Date: 29/04/2021
+
+.myAlert-top-success, .myAlert-top-unknown,
+.myAlert-top-error-1, .myAlert-top-error-2,
+.myAlert-top-error-3, .myAlert-top-error-4,
+.myAlert-top-error-5, .myAlert-top-success2,
+.myAlert-top-error-6
+{
+  position: fixed;
+  top: 1%; 
+  left: 30%;
+  width: 40%;
+  z-index: 99999999;
+  text-align: center;
+}
+
+.myAlert-top-success, .myAlert-top-success2 {
+  border: thin solid green;
+}
+
+
+.myAlert-top-unknown, .myAlert-top-error-1,
+.myAlert-top-error-2, .myAlert-top-error-3,
+.myAlert-top-error-4, .myAlert-top-error-5,
+.myAlert-top-error-6
+{
+  border: thin solid red;
+}
+
+
+.myAlert-bottom{
+  position: fixed;
+  bottom: 1%;
+  left: 10%;
+  width: 80%;
+  z-index: 99999999;
+}
+
+.alert{
+  display: none;
+}
+
+.alert_close:hover {
+  background-color: #f8d7da !important;
+}
+
+.alert_close:focus {
+  outline: none !important;
+}
+
+.alert_close {
+  padding: 0% !important;
+  margin: 0.75rem 1.25rem !important;
+}

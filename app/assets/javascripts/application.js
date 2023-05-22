@@ -1,0 +1,27 @@
+//= require jquery
+//= require jquery_ujs
+//= require ajax_setup
+//= require ajax_modal
+//= require popper
+//= require bootstrap
+//= require flash_message
+//= require visibility_map
+//= require modal
+//= require select2
+//= require select2_init
+//= require student_page
+//= require admin_page
+//= require enable_toogle
+//= require adding_topics
+//= require matrix_selector
+//= require feedback_saving
+//= require feedback_review
+//= require add_note
+//= require profanity_filter
+//= require alerts
+//= require import_csv
+//= require wizard
+//= require feedback_charts
+//= require edit_periods
+//= require feedback_old
+

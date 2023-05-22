@@ -1,0 +1,15 @@
+// CSS for uploading files
+// Authors: Anton Minkov && Laney Deveson
+// Date: 09/04/2021
+
+.custom-file-input.selected:lang(en)::after {
+  content: "" !important;
+}
+
+.custom-file {
+  overflow: hidden;
+}
+
+.custom-file-input {
+  white-space: nowrap;
+}

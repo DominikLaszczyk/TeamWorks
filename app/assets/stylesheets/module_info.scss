@@ -1,0 +1,321 @@
+// CSS for the module info page
+// Authors: Anton Minkov && Laney Deveson
+// Date: 06/04/2021
+
+.form-group {
+  margin-bottom: 0%;
+}
+
+label {
+  margin-bottom: 0% !important;
+}
+
+.module_form {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: transparent;
+  color: rgb(31, 20, 93);
+  border: none;
+}
+
+.button_create_module {
+  margin-top: 0%;
+  margin-bottom: 1%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: left;
+  width: 35%
+}
+
+.float_right {
+  float: right !important;
+}
+
+.margin_none {
+  margin: 0% !important;
+}
+
+.margin_bottom_none {
+  margin-bottom: 0% !important;
+}
+
+.button_go_back_1 {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: right;
+  width: 40%
+}
+
+.container.body_whole_custom_3 {
+  width: 100%;
+  border-radius: 8px;
+  border: 1.5px solid rgb(31, 20, 93);
+  background-color: white;
+  margin-bottom: 3%
+}
+
+.special_margin_top {
+  margin-top: 1%;
+}
+
+.margin_right {
+  margin-right: 1%;
+}
+
+.button_small {
+  width: 25%;
+}
+
+.button_go_back_2 {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: right;
+  width: 100%
+}
+
+.margin_left_none {
+  margin-left: 0% !important;
+}
+
+.margin_left_small {
+  margin-left: 1% !important;
+}
+
+.button_create_user_1 {
+  margin-top: 0%;
+  margin-bottom: 2%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: right;
+  width: 35%
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.button_search_3 {
+  margin-top: 0%;
+  margin-bottom: 2%;
+  margin-left: 1%;
+  width: 35%;
+}
+
+a.button:hover {
+  background-color: rgb(0, 159, 218) !important;
+  color: black !important;
+}
+
+button:hover {
+  background-color: rgb(0, 159, 218) !important;
+  color: black !important;
+}
+
+.margin_bottom_small {
+  margin-bottom: 1%;
+}
+
+.margin_bottom_medium {
+  margin-bottom: 3%;
+}
+
+.margin_bottom_big {
+  margin-bottom: 5%;
+}
+
+.special_width_topic {
+  width: 50%;
+}
+
+.special_width_topic_name {
+  min-width: 55% !important;
+}
+
+.margin_top_half_rem {
+  margin-top: 0.5rem;
+}
+
+.student_numbers span {
+  display: block;
+}
+
+.button_topics {
+  background-color: rgb(31, 20, 93);
+  color: white;
+}
+
+.button_topics:hover {
+  background-color: rgb(0, 159, 218);
+  color: black;
+}
+
+.button_topics:focus {
+  outline-width: 0 !important;
+  border-color: none !important;
+  box-shadow: none !important;
+  background-color: rgb(0, 159, 218) !important;
+  color: black !important;
+}
+
+.btn:focus {
+  outline-width: 0 !important;
+  border-color: none !important;
+  box-shadow: none !important;
+  background-color: rgb(0, 159, 218) !important;
+  color: black !important;
+}
+
+.group_creation_input {
+  width: 40%;
+}
+
+.margin_bottom_2 {
+  margin-bottom: 2%;
+}
+
+.special_size_1 {
+  width: 50%;
+}
+
+.special_size_2 {
+  width: 100%;
+}
+
+.special_line {
+  border: none;
+  height: 1px;
+  background-color: rgb(184, 158, 158);
+}
+
+input[type="checkbox"]:focus{
+  outline:0;
+}
+
+.width_50 {
+  width: 50%;
+}
+
+.disabled_button {
+  cursor: not-allowed;
+  pointer-events: none;
+  //text-align: center;
+  font-size: larger;
+  color: GrayText;
+  cursor: inherit;
+  background-color: #ddd;
+  background: #ddd;
+  font-family: 'Steph';
+}
+
+.button_mailmerge_edit {
+  margin-top: 0%;
+  margin-bottom: 2%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: right;
+  width: 100%;
+  background-image: url("/images/edit_merge.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent !important;
+}
+
+.button_mailmerge_edit:hover {
+  background-color: #009fda !important;
+  color: transparent !important;
+}
+
+.button_mailmerge_edit:focus {
+  background-color: #009fda !important;
+  color: transparent !important;
+}
+
+.button_mailmerge_send_1 {
+  margin-top: 0%;
+  margin-bottom: 2%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: right;
+  width: 80%;
+}
+
+.padding_right_small_5px {
+  padding-right: 2px;
+}
+
+.edit_merge_image {
+  border: none;
+  max-width: 90%;
+  height: auto;
+  float: left;
+  margin-right: 0%;
+  margin-left: 0%;
+}
+
+@media (min-width: 576px) {
+  .col-sm-1_special {
+    flex: 0 0 5% !important;
+    max-width: 8.3333333333%;
+  }
+}
+
+.padding_left_small {
+  padding-left: 2px;
+}
+
+.margin_bottom_small_override {
+  margin-bottom: 1% !important;
+}
+
+.entry-content {
+  max-width: 50%;
+}
+
+.margin_left_auto {
+  margin-left: auto !important;
+}
+
+.button_edit_clone {
+  margin-top: 0%;
+  margin-bottom: 2%;
+  margin-left: 1%;
+  margin-right: 0%;
+  float: right;
+  width: 100%;
+}
+
+.button_review_feedback_all {
+  margin-top: 0%;
+  margin-bottom: 2%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: right;
+  width: 55%;
+}
+
+a.no_text {
+  color: transparent !important;
+}
+
+a.no_text:hover {
+  color: transparent !important;
+}
+
+.search_logo_special {
+  margin-left: 1%;
+  margin-top: 0%;
+  width: 25%;
+  height: auto;
+}
+
+.button_search_special {
+  margin-top: 0%;
+  margin-bottom: 2%;
+  margin-left: 1%;
+  width: 95%;
+}
+

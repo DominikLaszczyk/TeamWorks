@@ -1,0 +1,185 @@
+// CSS for the student page
+// Authors: Anton Minkov && Laney Deveson
+// Date: 29/03/2021
+
+.card.mb-3-student {
+    max-width: 500px;
+    height: auto;
+    margin: auto;
+    //border: 5px solid #FFFF00;
+    padding: 10px;
+}
+
+.card-body-student {
+    max-width: 500px;
+    //min-width: 250px;
+    //height: auto;
+    margin-top: 2%;
+    //margin: auto;
+    //border: 5px solid #FFFF00;
+    padding: 0px;
+}
+
+.card-header-student {
+    border: 0.1px solid #e6e6e3;
+    text-align: center;
+    font-size: larger;
+}
+
+.select_module {
+    margin: auto;
+    text-align: center;
+    font-size: larger;
+    color: white;
+    background-color: rgb(31, 20, 93);
+    font-family: 'Steph';
+    width: 50%;
+}
+
+.select_module:hover {
+    background-color: rgb(0, 159, 218);
+    color: black;
+}
+
+.module_dropdown {
+    width: 100%;
+    margin-bottom: 2%;
+    font-size: 17.5px;
+}
+
+#module_name {
+    color: white;
+}
+
+.module_body {
+    border-radius: 8px;
+    border: 0.1px solid gray;
+    margin: auto;
+    margin-top: 2%;
+    text-align: center;
+    background-color: rgb(31, 20, 93);
+    //background-color: rgb(0, 159, 218);
+    height: 50%;
+    margin-bottom: 2%;
+}
+
+.module_info {
+    border-radius: 8px;
+    //border: 0.1px solid gray;
+    //background-color: rgb(0, 159, 218);
+    background-color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 2%;
+    color: black;
+}
+
+.module_div {
+    border-radius: 8px;
+    //border: 0.1px solid gray;
+    display: inline-block;
+    position: relative;
+    line-height: 2;
+}
+
+.module_group {
+    //background-color: white;
+    margin: auto;
+    margin-bottom: 0%;
+    font-size: 18px;
+    overflow-y: scroll;
+    //border: 2px solid rgb(31, 20, 93);
+}
+
+.module_feedback {
+    //background-color: white;
+    margin: auto;
+    margin-bottom: 0%;
+    list-style-position: inside;
+    font-size: 18px;
+    position: relative;
+    top: 0px;
+    border: 2px solid rgb(31, 20, 93);
+}
+
+.feedback_header {
+    font-size: 21px;
+    text-decoration: underline;
+}
+
+.group_header {
+    font-size: 23px;
+    //text-decoration: underline;
+}
+
+.group_line {
+    border: 0.5px solid black;
+}
+
+.small {
+    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
+}
+
+.medium {
+    font-size: calc(15px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
+}
+
+.bigger {
+    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important;
+}
+
+.choose_logo_middle {
+    width: 50%;
+    height: auto;
+}
+
+.see_trough {
+    margin-top: 0%;
+    background-color: transparent;
+    border: none;
+}
+
+.green_text {
+    color: rgb(9, 189, 9) !important;
+}
+
+.center_text {
+    text-align: center;
+}
+
+.button_go_back_3 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    float: right;
+    width: 20% !important;
+}
+
+.text_red {
+    color: red !important;
+}
+
+.text_yellow {
+    color: rgb(180, 180, 40) !important;
+    
+}
+
+.text_green {
+    color: rgb(14, 160, 14) !important;
+}
+
+.module_hover:hover {
+  background-color: #EEEEFF;
+  cursor: pointer;
+}
+
+.highlight_module {
+  background-color: #cdcdff;
+}
+
+.highlight_team {
+  background-color: #cdcdff !important;
+}

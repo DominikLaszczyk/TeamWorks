@@ -1,0 +1,23 @@
+- # Empty layout
+- # Authors: Anton Minkov && Laney Deveson
+- # Date: 11/04/2021
+
+!!!
+%html
+  %head
+    %title Teamworks - #{content_for(:title)}
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %meta{ :'http-equiv' => 'X-UA-Compatible', content: 'IE=edge' }
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
+    = stylesheet_link_tag    "application", media: :all
+    = javascript_include_tag "application"
+    = favicon_link_tag '/images/teamworks_icon2.png'
+    = csrf_meta_tags
+
+  // %body{ class: environment_notice_body_class , onload: "myFunction()"}
+  %body{onload: "resizeGroup()"}
+  
+    #wrap.padding_wrap_special
+      %main
+        #main-container.container.no_padding_override
+          = yield

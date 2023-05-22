@@ -1,0 +1,80 @@
+- # View for previous documents
+- # Authors: Anton Minkov && Laney Deveson
+- # Date: 08/05/2021
+
+- content_for :title, "Profile - Previous Documents"
+
+.container.body_whole_custom
+  .container-fluid.text_black.bg_none.margin_top
+    .container-fluid.bg_none.text_black
+      .container-fluid.bg_none.text_black.text_center
+        %h.bigger.width_100
+          Old Records
+        %hr.group_line
+      .container-fluid.bg_none.text_black.margin_top.bigger
+        - # Loop trough all academic years(+ the current one, as you may have inactive modules in it)
+        - for i in 0...@academic_years.length
+          .container-fluid.bg_none.text_black.no_padding.margin_none
+            %h4
+              %strong
+                Academic Year #{@academic_years[i].years}
+            %hr
+            %ul
+              - inactive_modules = ListModule.get_modules_for_years(@academic_years[i].years, current_user.username)
+              - # Loop trough all past(inactive) modules for that academic year
+              - for z in 0...inactive_modules.length
+                %li
+                  %h5
+                    #{inactive_modules[z].name}
+                  %hr
+                  %ul
+                    - inactive_teams = ListModule.get_teams_for_user(inactive_modules[z].id, current_user.username)
+                    - # Loop trough all the teams for that module
+                    - for x in 0...inactive_teams.length
+                      %li
+                        %p.small
+                          %i
+                            #{inactive_teams[x].name}
+                        %hr
+                        %p.small
+                          %strong
+                            Team Operating Agreement Download 
+                        %hr
+                        %ul
+                          %li
+                            - # Display the download TOP option
+                            %p.small
+                              - if inactive_teams[x].document.attached? && inactive_teams[x].toa_status == "finished"
+                                %i
+                                  = link_to 'Team Operating Agreement - ' + inactive_teams[x].document.created_at.strftime("%d/%m/%Y").to_s, rails_blob_path(inactive_teams[x].document, disposition: "attachment")
+                              - else
+                                %i
+                                  No Team Operating Agreement recorded for this team.
+                        %hr
+                        %p.small
+                          %strong
+                            Team Meeting Records Download 
+                        %hr
+                        %ul
+                          - tmrs = Tmr.get_all_tmr_for_team(inactive_teams[x].id)
+                          - # Loop trough all the TMR's for that team
+                          - if tmrs.length == 0
+                            %li
+                              %p.small
+                                %i
+                                  No Team Meeting Records saved for this team.
+                                %hr
+                          - for y in 0...tmrs.length
+                            %li
+                              - # Display the download TMR option
+                              %p.small
+                                %i
+                                  = link_to 'Team Meeting Record - ' + tmrs[y].tmr_doc.created_at.strftime("%d/%m/%Y").to_s, rails_blob_path(tmrs[y].tmr_doc, disposition: "attachment")
+                              - if y != 7
+                                %hr
+                              
+                  
+                        %hr.group_line
+                  %hr.group_line
+          %hr.group_line     
+                

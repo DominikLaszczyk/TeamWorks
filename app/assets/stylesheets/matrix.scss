@@ -1,0 +1,63 @@
+// CSS for the feedback matrix
+// Authors: Anton Minkov && Laney Deveson
+// Date: 27/04/2021
+
+.special_radio_input {
+  visibility:hidden;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+// .special_radio_input:checked + .make_pointer {
+//   background: rgb(133, 247, 133) !important;
+//   color: black !important;
+// }
+
+.text_center {
+  text-align: center !important;
+}
+
+.top_align {
+  vertical-align: top !important;
+}
+
+.special_table_border {
+  border-left: 1px solid black;
+  border-top: 1px solid black; 
+}
+
+.feedback_select {
+  background-color: rgb(94, 226, 94);
+}
+
+.dark_border {
+  border: 2px solid rgb(31, 20, 93);;
+}
+
+.no_border {
+  border: none;
+}
+
+.scroll_down_big {
+  overflow: auto;
+}
+
+.bottom_border_purple {
+  border-bottom: 2px solid rgb(31, 20, 93);;
+}
+
+.button_feedback {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: right;
+  width: 30%;
+}
+
+.scroll_sideways {
+  overflow: auto;
+}
+

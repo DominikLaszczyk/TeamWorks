@@ -1,0 +1,88 @@
+- # View for modules page
+- # Authors: Anton Minkov && Laney Deveson
+- # Date: 29/03/2021
+
+- content_for :title, "Modules"
+
+.card.mb-3.card.mb-3-student
+  - # Choose a module to display its information
+  .card-header.card-header-student
+    Choose module
+  .card-body.card-body-student
+    - collection = @modules
+    = simple_form_for :module_choice do |f|
+      = f.collection_select :module_id, collection, :id, :name, {}, {:class=> "module_dropdown form-select", :id=> "module_dropdown"}
+      = f.button :submit, "Select", class: "btn btn-primary select_module d-flex justify-content-center", id:"submit_choice", "data-disable-with" => "Loading.."
+
+- if params["module_id"] == nil
+  .container.module_body.see_trough
+    = image_tag('choose_logo.png', alt: 'Please choose', class: 'choose_logo_middle')
+- else
+  .container.module_body
+    %h1{:id => "module_name", :class => "bigger"} #{@module_info.name}
+    .container.module_info#hider
+      - # Display members in the current team
+      .container.module_div.module_group#module_group.small
+        - if @team_info.nil?
+          %h.group_header.medium You are not in a team
+          - if @module_info.team_type == "free_join"
+            %a.button{:href => student_groups_path(:module_id => @module_id), type: "button", name: "join_groups_button",  class: "btn btn-primary agreement_buttons justify-content-center button_add_module", id:"submit_choice"}Join Teams
+        - elsif @team_members == nil
+          %h.group_header.medium #{@team_info.name}
+          %hr.group_line
+          %p Team members unavailable 
+        - else
+          %h.group_header.medium #{@team_info.name}
+          - if @team_info.topic != "none"
+            %p Team topic: #{@team_info.topic}
+          %hr.group_line
+          - @team_members.each do |currentMember|
+            %p 
+              username: #{currentMember.username}
+              %br
+              E-mail: #{currentMember.email}
+              %hr.group_line
+      
+      - # Display student resources: Team meeting record, Team operating agreemnet and Feedback
+      .container.module_div.module_feedback#module_feedback.small
+        %h.feedback_header
+        %ul
+          %strong.feedback_header.medium
+            Open:
+          %i.feedback_header.medium
+            - if @closest_date != nil
+              - start_date = @closest_date.start_date.strftime("%I:%M %p %d/%m/%Y")
+              - end_date = @closest_date.end_date.strftime("%I:%M %p %d/%m/%Y")
+              #{start_date} -  #{end_date}
+            - else
+              Unavailable
+          - if @module_info.level == 4 || @module_info.level == 5
+            - if @team_info.nil? || @in_feedback_window == false
+              %li Peer Feedback Matrix Unavailable
+            - elsif @is_feedback_completed
+              %li 
+                Peer Feedback Matrix 
+                %span.green_text (Done)
+            - else
+              %li #{link_to "Peer Feedback Matrix", feedback_matrix_path(:team_id => @team_info.id, :module_id => @team_info.list_module_id, :feedback_date_id => @closest_date.id)}
+            
+          - if @team_info != nil
+            %li 
+              #{link_to "Team Meeting Record", tmr_path(:team_id => @team_info.id, :module_id => @team_info.list_module_id)}
+          - else
+            %li
+              Team Meeting Record Unavailable
+        %ul
+          %strong.feedback_header.medium 
+            Additional Info: 
+          - # Have to make check here if there is team
+          - if @team_info.nil?
+            %li Team Operating Agreement Unavailable
+          - else
+            %li #{link_to "Team Operating Agreement", toa_path(:team_id => @team_info.id)}
+          %li Feedback History
+
+:coffee
+  $ ->
+    $('#show-flash').on 'click', ->
+      $.flashAlert('big pp world!', 'alert-success')
